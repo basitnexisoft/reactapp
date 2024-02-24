@@ -1,16 +1,25 @@
 import React, { useState } from "react";
 import { Link } from "react-scroll";
 import { AiOutlineClose, AiOutlineMenu } from "react-icons/ai";
+import Contact from "../models/Contact";
 
 const Navbar = () => {
-  const [menuOpen, setMenuOpen] = useState(false);
-
-  const toggleMenu = () => {
-    setMenuOpen(!menuOpen);
+  const [menu, setMenu] = useState(false);
+  const [showForm, setShowForm] = useState(false);
+ 
+  const handleChange = () => {
+    setMenu(!menu);
   };
 
   const closeMenu = () => {
-    setMenuOpen(false);
+    setMenu(false);
+  };
+  const openForm = () => {
+    setShowForm(true);
+    setMenu(false);
+  };
+  const clessForm = () => {
+    setShowForm(false);
   };
 
   return (
@@ -77,22 +86,22 @@ const Navbar = () => {
         </nav>
 
         <div className="hidden lg:flex">
-          <button className="bg-brightColor text-white px-4 py-2 rounded-md hover:bg-hoverColor transition duration-300 ease-in-out">
+          <button onClick={openForm} className="bg-brightColor text-white px-4 py-2 rounded-md hover:bg-hoverColor transition duration-300 ease-in-out">
             Contact Us
           </button>
         </div>
-
+         {showForm && <Contact closeform={clessForm} />}
         <div className="lg:hidden flex items-center">
-          {menuOpen ? (
-            <AiOutlineClose size={28} onClick={toggleMenu} />
+          {menu ? (
+            <AiOutlineClose size={28} onClick={handleChange} />
           ) : (
-            <AiOutlineMenu size={28} onClick={toggleMenu} />
+            <AiOutlineMenu size={28} onClick={handleChange} />
           )}
         </div>
       </div>
 
       {/* Mobile Menu */}
-      <div className={`${menuOpen ? "" : "hidden"} lg:hidden absolute bg-backgroundColor text-white left-0 top-16 font-semibold text-2xl text-center pt-8 pb-4 gap-8 w-full h-auto transition-transform duration-300`}>
+      <div className={`${menu ? "" : "hidden"} lg:hidden absolute bg-backgroundColor text-white left-0 top-16 font-semibold text-2xl text-center pt-8 pb-4 gap-8 w-full h-auto transition-transform duration-300`}>
         <Link to="home" spy={true} smooth={true} duration={500} className="hover:text-hoverColor transition-all cursor-pointer" onClick={closeMenu}>
           Home
         </Link>
