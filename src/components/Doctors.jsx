@@ -1,14 +1,17 @@
-import React from 'react';
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
+import React, { useRef } from 'react';
 import Slider from "react-slick";
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
-const slider = useRef(null);
+const Doctors = () => {
+  const slider = useRef(null);
+
   const settings = {
     dots: true,
     infinite: true,
     speed: 500,
+    arrows: false,
     slidesToShow: 3,
     slidesToScroll: 1,
     responsive: [
@@ -42,7 +45,7 @@ const slider = useRef(null);
 
   const doctorsData = [
     {
-      img: "/src/assets/img/doc1.jpg",
+      img: "./src/assets/img/doctor.jpg",
       name: "Dr. Serena Mitchell",
       specialties: "Orthopedic Surgeon",
     },
@@ -77,9 +80,10 @@ const slider = useRef(null);
         </div>
       </div>
       <div className="mt-5">
-        <Slider {...settings}>
+        <Slider ref={slider} {...settings}>
           {doctorsData.map((doctor, index) => (
-            <div className="h-[350px] text-black rounded-xl shadow-[rgba(0,0,0,0.24)] md-2 cursor-pointer" 
+            <div
+              className="h-[350px] text-black rounded-xl shadow-[rgba(0,0,0,0.24)] md-2 cursor-pointer"
               key={index}
             >
               <div>
