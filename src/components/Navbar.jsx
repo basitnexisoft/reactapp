@@ -101,22 +101,28 @@ const Navbar = () => {
       </div>
 
       {/* Mobile Menu */}
-      <div className={`${menu ? "" : "hidden"} lg:hidden absolute bg-backgroundColor text-white left-0 top-16 font-semibold text-2xl text-center pt-8 pb-4 gap-8 w-full h-auto transition-transform duration-300`}>
-        <Link to="home" spy={true} smooth={true} duration={500} className="hover:text-hoverColor transition-all cursor-pointer" onClick={closeMenu}>
+      <div className={`${menu ? "translate-x-0" : "-translate-x-full"} lg:hidden absolute bg-backgroundColor text-white left-0 top-16 font-semibold text-2xl text-left pl-5 pt-8 pb-4 gap-8 w-full h-screen transition-transform duration-300`}>
+        <Link to="home" spy={true} smooth={true} duration={500} className="hover:text-hoverColor transition-all cursor-pointer block py-3" onClick={closeMenu}>
           Home
         </Link>
-        <Link to="about" spy={true} smooth={true} duration={500} className="hover:text-hoverColor transition-all cursor-pointer" onClick={closeMenu}>
+        <Link to="about" spy={true} smooth={true} duration={500} className="hover:text-hoverColor transition-all cursor-pointer block py-3" onClick={closeMenu}>
           About Us
         </Link>
-        <Link to="services" spy={true} smooth={true} duration={500} className="hover:text-hoverColor transition-all cursor-pointer" onClick={closeMenu}>
+        <Link to="services" spy={true} smooth={true} duration={500} className="hover:text-hoverColor transition-all cursor-pointer block py-3" onClick={closeMenu}>
           Services
         </Link>
-        <Link to="doctors" spy={true} smooth={true} duration={500} className="hover:text-hoverColor transition-all cursor-pointer" onClick={closeMenu}>
+        <Link to="doctors" spy={true} smooth={true} duration={500} className="hover:text-hoverColor transition-all cursor-pointer block py-3" onClick={closeMenu}>
           Doctors
         </Link>
-        <Link to="blog" spy={true} smooth={true} duration={500} className="hover:text-hoverColor transition-all cursor-pointer" onClick={closeMenu}>
+        <Link to="blog" spy={true} smooth={true} duration={500} className="hover:text-hoverColor transition-all cursor-pointer block py-3" onClick={closeMenu}>
           Blog
         </Link>
+
+        <div className=" lg:hidden">
+          <button onClick={openForm} className="bg-brightColor text-white px-4 py-2 rounded-md hover:bg-hoverColor transition duration-300 ease-in-out">
+            Contact Us
+          </button>
+        </div>
       </div>
     </div>
   );
