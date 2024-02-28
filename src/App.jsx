@@ -5,7 +5,7 @@ import About from './components/About'
 import Services from './components/Services'
 import Doctors from './components/Doctors'
 import Footer from './components/Footer'
-
+import Blog from './components/Blog'
 function App() {
 
   return (
@@ -29,7 +29,7 @@ function App() {
           <Doctors/>
         </div>
         <div id="blog">
-          Blog
+         <Blog/>
         </div>
       </main>
       <Footer/>
