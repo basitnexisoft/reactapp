@@ -4,6 +4,8 @@ import Home from './components/Home'
 import About from './components/About'
 import Services from './components/Services'
 import Doctors from './components/Doctors'
+import Footer from './components/Footer'
+
 function App() {
 
   return (
@@ -30,6 +32,7 @@ function App() {
           Blog
         </div>
       </main>
+      <Footer/>
       
     </>
   )
