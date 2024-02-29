@@ -8,6 +8,7 @@ const Doctors = () => {
   const slider = useRef(null);
 
   const settings = {
+    accessiblity: true,
     dots: true,
     infinite: true,
     speed: 500,
@@ -50,12 +51,12 @@ const Doctors = () => {
       specialties: "Orthopedic Surgeon",
     },
     {
-      img: "/src/assets/img/doc2.jpg",
+      img: "/src/assets/img/doctors.jpg",
       name: "Dr. Serena Mitchell",
       specialties: "Cardiologist",
     },
     {
-      img: "/src/assets/img/doc3.jpg",
+      img: "/src/assets/img/doctors1.jpg",
       name: "Dr. Camila Rodriguez",
       specialties: "Pediatrician",
     }
@@ -71,10 +72,12 @@ const Doctors = () => {
           </p>
         </div>
         <div className="flex gap-5 mt-4 lg:mt-0">
-          <button className="bg-[#d5f2ec] text-backgroundColor px-4 py-2 rounded-lg active:bg-[#ade9dc]">
+          <button className="bg-[#d5f2ec] text-backgroundColor px-4 py-2 rounded-lg active:bg-[#ade9dc]"
+           onClick={()=>slider.current.slickPrev()}>
             <FaArrowLeft size={25} />
           </button>
-          <button className="bg-[#d5f2ec] text-backgroundColor px-4 py-2 rounded-lg active:bg-[#ade9dc]">
+          <button className="bg-[#d5f2ec] text-backgroundColor px-4 py-2 rounded-lg active:bg-[#ade9dc]"
+           onClick={()=>slider.current.slickNext()}>
             <FaArrowRight size={25} />
           </button>
         </div>
