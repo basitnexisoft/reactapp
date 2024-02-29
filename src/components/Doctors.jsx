@@ -8,7 +8,7 @@ const Doctors = () => {
   const slider = useRef(null);
 
   const settings = {
-    accessiblity: true,
+    accessibility: true,
     dots: true,
     infinite: true,
     speed: 500,
@@ -46,19 +46,34 @@ const Doctors = () => {
 
   const doctorsData = [
     {
-      img: "./src/assets/img/doctor.jpg",
+      img: "./src/assets/img/doctor7.jpg",
       name: "Dr. Serena Mitchell",
       specialties: "Orthopedic Surgeon",
     },
     {
-      img: "/src/assets/img/doctors.jpg",
+      img: "/src/assets/img/doctor2.jpg",
       name: "Dr. Serena Mitchell",
       specialties: "Cardiologist",
     },
     {
-      img: "/src/assets/img/doctors1.jpg",
+      img: "/src/assets/img/doctor3.jpg",
       name: "Dr. Camila Rodriguez",
       specialties: "Pediatrician",
+    },
+    {
+      img: "/src/assets/img/doctor4.jpg",
+      name: "Dr. victor Nguyen",
+      specialties: "Neurologist",
+    },
+    {
+      img: "/src/assets/img/doctor5.jpg",
+      name: "Dr. Ethan Carter",
+      specialties: "Dermatologist",
+    },
+    {
+      img: "/src/assets/img/doctor6.jpg",
+      name: "Dr. Olivia Martinez",
+      specialties: "Ophthalmologist",
     }
   ];
 
@@ -73,11 +88,11 @@ const Doctors = () => {
         </div>
         <div className="flex gap-5 mt-4 lg:mt-0">
           <button className="bg-[#d5f2ec] text-backgroundColor px-4 py-2 rounded-lg active:bg-[#ade9dc]"
-           onClick={()=>slider.current.slickPrev()}>
+           onClick={() => slider.current.slickPrev()}>
             <FaArrowLeft size={25} />
           </button>
           <button className="bg-[#d5f2ec] text-backgroundColor px-4 py-2 rounded-lg active:bg-[#ade9dc]"
-           onClick={()=>slider.current.slickNext()}>
+           onClick={() => slider.current.slickNext()}>
             <FaArrowRight size={25} />
           </button>
         </div>
